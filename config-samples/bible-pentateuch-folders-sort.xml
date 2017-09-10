@@ -1,0 +1,25 @@
+<!DOCTYPE sort-configuration
+  PUBLIC 'urn:pubid:harpercollins.com:doctypes:sort:configuration'
+  'sort-config.dtd'>
+<!-- 
+Elements/Attributes configuration:
+	
+	sort-configuration: root element
+		@title: (optional) title of the sort configuration.
+	
+	order: Defines the relative order of the object. Supports either managed objects or content assemblies.
+			The value is the object name pattern to match.
+		@alias: (true|false, optional, default false) true if using alias, false if using display name.
+		@startsWith: (true|false, optional, default false) true if matching object name starts with this value.
+		@endsWith: (true|false, optional, default false) true if matching object name ends with this value.
+		@sort: (asc|desc, optional, default asc) only applies to content assemblies.
+		@sortMethod: (num|string, optional, default string) only applies to content assemblies. If "num", the
+			numeric part of the object name is retained to use for the sorting operation.
+-->
+<sort-configuration title="Bible No Apocrypha Folders Sort">
+	<order alias="false" startsWith="false" endsWith="false" sort="asc" sortMethod="num">Ge</order>
+	<order alias="false" startsWith="false" endsWith="false" sort="asc" sortMethod="num">Ex</order>
+	<order alias="false" startsWith="false" endsWith="false" sort="asc" sortMethod="num">Lev</order>
+	<order alias="false" startsWith="false" endsWith="false" sort="asc" sortMethod="num">Nu</order>
+	<order alias="false" startsWith="false" endsWith="false" sort="asc" sortMethod="num">Dt</order>
+</sort-configuration>

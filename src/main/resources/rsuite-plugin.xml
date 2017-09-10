@@ -1,0 +1,83 @@
+<rsuite-plugin id="@pluginId@" version="@pluginVersion@ at @timeStamp@"
+	description="Sort managed objects and/or content assemblies by configuration.">
+
+	<extensionProvider id="rsuite.WebService">
+
+		<staticWebService path="/WebContent" root="/@pluginId@" />
+
+		<remoteApiDefinition id="@pluginId@:webservice.sort"
+			handler="com.rsicms.rsuite.sortconfig.webservice.ConfigSortWebService" />
+
+	</extensionProvider>
+
+
+	<extensionProvider id="rsuite.Doctypes">
+
+		<doctypePackage zipfile="doctypes.zip">
+			<doctype type="DTD"
+				publicId="urn:pubid:harpercollins.com:doctypes:sort:configuration">
+				<file>doctypes/sort_config/sort-config.dtd</file>
+				<previewXsl />
+				<managedObjectDefinitions>
+					<moDef name="sort-configuration" displayNameXPath="@title" />
+				</managedObjectDefinitions>
+			</doctype>
+		</doctypePackage>
+
+	</extensionProvider>
+
+
+	<extensionProvider id="rsuite.ContextMenu">
+
+		<contextMenuRuleSet name="@pluginId@:menu.sort">
+			<menuItemList>
+				<menuItem>
+					<type>action</type>
+					<actionName>rsuite:invokeWebservice</actionName>
+					<label>Sort by configuration...</label>
+					<property name="remoteApiName" value="@pluginId@:webservice.sort" />
+					<property name="formId" value="@pluginId@:form.sort" />
+					<property name="showProgressMeter" value="true" />
+					<property name="rsuite:group" value="rsuite:manage" />
+					<property name="rsuite:path" value="Organize" />
+					<property name="rsuite:icon" value="showInResultsNeeded" />
+				</menuItem>
+			</menuItemList>
+			<ruleList>
+				<rule>include nodeType ca,canode</rule>
+			</ruleList>
+		</contextMenuRuleSet>
+
+	</extensionProvider>
+
+
+	<extensionProvider id="rsuite.Forms">
+
+		<formDefinition id="@pluginId@:form.sort" label="Sort Configurations"
+			description="Sort Configurations">
+			<instructions>
+				Select a sort configuration to apply to the selected
+				folder.
+			</instructions>
+			<paramList>
+				<param>
+					<formControlType>select</formControlType>
+					<col>1</col>
+					<name>sort-config</name>
+					<label>Sort Configuration</label>
+					<allowMultiple>false</allowMultiple>
+					<datatype name="@pluginId@:datatype.sort" />
+				</param>
+			</paramList>
+		</formDefinition>
+
+		<datatypeDefinition name="@pluginId@:datatype.sort"
+			label="Sort Configurations" formControlType="select" baseType="string">
+			<optionListProvider
+				handler="com.rsicms.rsuite.sortconfig.datatype.SortConfigurationDatatypeValueProvider" />
+		</datatypeDefinition>
+
+	</extensionProvider>
+
+
+</rsuite-plugin>

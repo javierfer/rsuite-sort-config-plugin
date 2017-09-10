@@ -1,0 +1,54 @@
+apply plugin: 'java'
+apply plugin: 'maven'
+
+apply from: 'http://ivy.reallysi.com/ivy-repo/rsuite-std-plugin-tasks.gradle'
+apply from: 'http://ivy.reallysi.com/ivy-repo/standard-repositories.gradle'
+
+group = "rsi"
+project.buildDir = 'target'
+
+configurations {
+	includeInJar {
+		transitive = false
+	}
+}
+
+dependencies {
+	compile ('rsi:rsuite-api:5.2.1') {
+		transitive = false
+	}
+
+	compile("apache:commons-logging:1.1")
+	compile("apache:commons-io:1.4")
+	compile("apache:commons-lang:2.4")
+
+	includeInJar ('xmlprojector:xmlprojector:1.4.13') {
+		transitive=false
+	}
+
+	includeInJar ('com.google.guava:guava:10.0.1') {
+		transitive=false
+	}
+
+	configurations.compile.extendsFrom(configurations.includeInJar)
+}
+
+task zipDoctypes(type: Zip) {
+	baseName = "doctypes"
+	from "src/main/resources"
+	exclude "rsuite-plugin.xml"
+}
+
+task prepareRSuitePlugin (dependsOn: ['zipDoctypes']) << {
+	copy {
+		from "${project.buildDir}/distributions/doctypes-${project.version}.zip"
+		into "${project.buildDir}/resources/main/"
+		rename { fileName -> fileName.replace("-${project.version}", '') }
+	}
+}
+
+jar {
+	dependsOn prepareRSuitePlugin
+	baseName = 'rsuite-sort-config-plugin'
+	from configurations.includeInJar
+}

@@ -1,0 +1,20 @@
+<?xml encoding="UTF-8"?>
+<!--
+publicId = "urn:pubid:harpercollins.com:doctypes:sort:configuration"
+-->
+
+<!ELEMENT sort-configuration (order)+>
+<!ATTLIST sort-configuration
+  xmlns CDATA #FIXED ''
+  title CDATA #IMPLIED
+  xmlns:r CDATA #FIXED 'http://www.rsuitecms.com/rsuite/ns/metadata'
+  r:rsuiteId CDATA #IMPLIED>
+
+<!ELEMENT order (#PCDATA)>
+<!ATTLIST order
+  xmlns CDATA #FIXED ''
+  alias (true|false) "false"
+  endsWith (true|false) "false"
+  startsWith (true|false) "false"
+  sort (asc|desc) #IMPLIED
+  sortMethod (num|string) #IMPLIED>
