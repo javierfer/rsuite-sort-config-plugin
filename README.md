@@ -44,6 +44,7 @@ Elements/Attributes configuration:
 
 By default, configuration files are looked up in "Support/Sort Configurations". To define a different place set the following property: 
 * sort.config.rsuite.path
+
 Use "/" as the folder hierarchy separator.
 
 ## RSuite action menu
