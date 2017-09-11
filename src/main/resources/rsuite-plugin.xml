@@ -16,7 +16,7 @@
 		<doctypePackage zipfile="doctypes.zip">
 			<doctype type="DTD"
 				publicId="urn:pubid:harpercollins.com:doctypes:sort:configuration">
-				<file>doctypes/sort_config/sort-config.dtd</file>
+				<file>doctypes/sort-config.dtd</file>
 				<previewXsl />
 				<managedObjectDefinitions>
 					<moDef name="sort-configuration" displayNameXPath="@title" />

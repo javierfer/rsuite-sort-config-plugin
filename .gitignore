@@ -1,2 +1,12 @@
 /.gradle/
 /bin/
+/.settings/
+build
+target
+bin
+.gradle
+*~
+*.bak
+*.log
+.svn
+.settings

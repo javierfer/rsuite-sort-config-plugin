@@ -5,7 +5,8 @@ Sorts managed objects and/or content assemblies by configuration.
 Sometimes users want to set a defined order for certain content, where the traditional ascending/descending alphabetical order does not fit.
 
 This plugin allows the use of different configuration files to define orders. The sample below is used to sort Bible content, like the Pentateuch. 
- 
+
+(Compatible with RSuite v4.1.x and v5.x.x)
 
 ## configuration file sample
 
