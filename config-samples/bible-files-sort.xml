@@ -16,7 +16,7 @@ Elements/Attributes configuration:
 		@sortMethod: (num|string, optional, default string) only applies to content assemblies. If "num", the
 			numeric part of the object name is retained to use for the sorting operation.
 -->
-<sort-configuration title="Bible Chapter Sort">
+<sort-configuration title="Bible Files Sort">
 	<order alias="false" startsWith="false" endsWith="true">Ge.dita</order>
 	<order alias="false" startsWith="false" endsWith="false">KJV_BIBLE_BOOKS_FULL_before_Ex.dita</order>
 	<order alias="false" startsWith="false" endsWith="true">Lev.dita</order>
