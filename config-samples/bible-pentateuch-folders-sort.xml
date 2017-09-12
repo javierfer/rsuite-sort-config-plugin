@@ -16,7 +16,7 @@ Elements/Attributes configuration:
 		@sortMethod: (num|string, optional, default string) only applies to content assemblies. If "num", the
 			numeric part of the object name is retained to use for the sorting operation.
 -->
-<sort-configuration title="Bible No Apocrypha Folders Sort">
+<sort-configuration title="Bible Folders Sort">
 	<order alias="false" startsWith="false" endsWith="false" sort="asc" sortMethod="num">Ge</order>
 	<order alias="false" startsWith="false" endsWith="false" sort="asc" sortMethod="num">Ex</order>
 	<order alias="false" startsWith="false" endsWith="false" sort="asc" sortMethod="num">Lev</order>
