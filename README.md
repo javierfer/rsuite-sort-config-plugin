@@ -14,7 +14,7 @@ See samples in config-samples
 
 ```
 <!DOCTYPE sort-configuration
-  PUBLIC 'urn:pubid:harpercollins.com:doctypes:sort:configuration'
+  PUBLIC 'urn:pubid:rsicms.com:doctypes:sort:configuration'
   'sort-config.dtd'>
 <!-- 
 Elements/Attributes configuration:

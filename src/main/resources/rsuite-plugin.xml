@@ -15,7 +15,7 @@
 
 		<doctypePackage zipfile="doctypes.zip">
 			<doctype type="DTD"
-				publicId="urn:pubid:harpercollins.com:doctypes:sort:configuration">
+				publicId="urn:pubid:rsicms.com:doctypes:sort:configuration">
 				<file>doctypes/sort-config.dtd</file>
 				<previewXsl />
 				<managedObjectDefinitions>

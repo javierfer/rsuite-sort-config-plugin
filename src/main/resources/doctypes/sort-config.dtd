@@ -1,6 +1,6 @@
 <?xml encoding="UTF-8"?>
 <!--
-publicId = "urn:pubid:harpercollins.com:doctypes:sort:configuration"
+publicId = "urn:pubid:rsicms.com:doctypes:sort:configuration"
 -->
 
 <!ELEMENT sort-configuration (order)+>
